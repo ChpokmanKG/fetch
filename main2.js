@@ -7,13 +7,11 @@ function getGiphs(e) {
   fetch(`https://api.giphy.com/v1/gifs/search?&q=${searchTerm}&limit=100&api_key=3mIxmBZUIIPyb8R69gtxaW8Hsh74dFKV`)
   .then((response) => {return response.json(); })
   .then((resp => {
-      // Here we get the data array from the response object
-      let dataArray = resp.data
-      // We pass the array to showGiphs function
+      var dataArray = resp.data
       console.log(dataArray);
       showGiphs(dataArray);
   }))
-  .catch(err => console.log(err)); // We use catch method for Error handling
+  .catch(err => console.log(err));
 }
 
 function showGiphs(data){
