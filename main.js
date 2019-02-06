@@ -6,16 +6,24 @@ function myQuery(){
     console.log(data);
     Array.from(data).forEach((item) => {
       ret += `
-        <ul>
-          <li>${item.id}</li>
-          <li">${item.title}</li>
-          <li>
-            <img src="${item.category_image_url}"/>
-          </li>
-        </ul>
+        <div class="card">
+            <p class="p-id">${item.id}</p>
+            <div class="card-text">
+                <span>${item.title}</span>
+                <img src="${item.category_image_url}">
+            </div>
+        </div>
       `;
     });
     document.getElementById('root').innerHTML = ret;
   });
 }
 myQuery();
+
+        /* <ul>
+          <li>${item.id}</li>
+          <li">${item.title}</li>
+          <li>
+            <img src="${item.category_image_url}"/>
+          </li>
+        </ul> */
